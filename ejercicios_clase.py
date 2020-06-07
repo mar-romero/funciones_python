@@ -85,11 +85,12 @@ def ej2():
     '''
     inicio1 = 0
     fin1 = 20
-    def lista_aleatoria (inicio, fin):
+    def lista_aleatoria (inicio, fin, ramdom):
         numero = random.randrange(inicio, fin+1)
-        print('Los numeros ramdom son:', numero)
-        return numero
-    lista_aleatoria(inicio1, fin1)
+        numero_1 = random.randrange(inicio, fin+1)
+        print('Los numeros ramdom son:', numero, numero_1)
+        return numero, numero_1
+    lista_aleatoria(inicio1, fin1, 2)
     
 
     
@@ -114,6 +115,16 @@ def ej2():
 
     # raiz_cuadrada_1 = ....
     # raiz_cuadrada_2 = ....
+    import math
+    x = range(20)
+    
+    numero_3 = random.choice(x)
+    numero_2 = random.choice(x)
+    raiz_cuadrada_3 = math.sqrt( numero_3 )
+    raiz_cuadrada_2 = math.sqrt( numero_2 )
+    print('Los numero elegidos son:' , numero_2, numero_3)
+    print ('La raiz cuadrada de los numeros son: {:.2f}, {:.2f} '.format(raiz_cuadrada_2, raiz_cuadrada_3))
+
 
 
 def ej3():
