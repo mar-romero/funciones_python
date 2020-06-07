@@ -20,7 +20,6 @@ import random
 
 def ej1():
     # Ejercicios con funciones del sistema
-    numeros = [2, 4, 6, 8, 10, 12]
 
     '''
     Realice una funcion llamada "promedio" la cual
@@ -40,6 +39,27 @@ def ej1():
     Utilice esa función para calcular el promedio y luego
     imprima en pantalla el resultado
     '''
+    numeros = [4,2,6,7,12]
+    def promedios(numero):
+        def sumar(numero):
+            resultado = 0
+            for x in numeros:
+                resultado += x
+            print ('La suma de la lista:', resultado)
+            return resultado
+        def cantidad(numero):
+            cantidad_numeros = len(numeros)
+            print('La cantidad de numeros en la listas es:', cantidad_numeros)
+            return cantidad_numeros
+        res = sumar(numeros)
+        cant = cantidad(numeros)
+        if cant > 0:
+            pro = ( res / cant)
+            print ('El promedio de la lista es', pro)
+        else:
+            print('La lista se encuentra vacia')
+    promedios(numeros)
+
 
 
 def ej2():
@@ -53,7 +73,7 @@ def ej2():
     numero = random.randrange(inicio, fin+1)
     # Documentación oficial de random
     # https://docs.python.org/3.7/library/random.html
-
+    
     '''
     Realice una funcion llamada "lista_aleatoria" la cual
     reciba como parámetro el rango de aceptación de la lista
@@ -63,7 +83,16 @@ def ej2():
 
     Dicha función debe retornar la lista de elementos random generados.
     '''
+    inicio1 = 0
+    fin1 = 20
+    def lista_aleatoria (inicio, fin):
+        numero = random.randrange(inicio, fin+1)
+        print('Los numeros ramdom son:', numero)
+        return numero
+    lista_aleatoria(inicio1, fin1)
+    
 
+    
     # numeros = lista_aleatoria (inicio, fin, cantidad)
 
     # Imprima en pantalla la lista de elementos generados
@@ -151,10 +180,11 @@ def ej5():
     # cantidad_tres = contar(lista_numeros, 3)
 
 
+
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
-    ej1()
-    #ej2()
+    #ej1()
+    ej2()
     #ej3()
     #ej4()
     #ej5()
