@@ -33,7 +33,16 @@ def ej1():
     Importe el módulo a este programa/documento para su uso
     en el resto de los ejercicios
     '''
-
+    def operator():
+        numero1 = 11
+        numero2 = 2
+        resultado = 0    
+        if numero1 >= numero2:
+            numero1 -= numero2
+            resultado += 1
+            operator()
+        else:
+            print("Resultado = {}, resto = {}".format(resultado,numero1)) 
 
 def ej2():
     print("Jugando a los dados")
@@ -194,7 +203,7 @@ def ej5():
 
 if __name__ == '__main__':
     print("Ejercicios de práctica")
-    #ej1()
+    ej1()
     #ej2()
     #ej3()
     #ej4()
