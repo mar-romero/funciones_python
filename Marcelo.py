@@ -10,32 +10,33 @@ __version__ = "1.1"
 
 
 def promedios(numero):
-        def sumar(numero):
-            resultado = 0
-            for x in numeros:
-                resultado += x
-            print ('La suma de la lista:', resultado)
-            return resultado
-        def cantidad(numero):
-            cantidad_numeros = len(numeros)
-            print('La cantidad de numeros en la listas es:', cantidad_numeros)
-            return cantidad_numeros
-        res = sumar(numeros)
-        cant = cantidad(numeros)
-        if cant > 0:
-            pro = ( res / cant)
-            print ('El promedio de la lista es', pro)
-        else:
-            print('La lista se encuentra vacia')
-return
+    def sumar(numero):
+        resultado = 0
+        for x in numeros:
+            resultado += x
+        print ('La suma de la lista:', resultado)
+        return resultado
+    def cantidad(numero):
+        cantidad_numeros = len(numeros)
+        print('La cantidad de numeros en la listas es:', cantidad_numeros)
+        return cantidad_numeros
+    res = sumar(numeros)
+    cant = cantidad(numeros)
+    if cant > 0:
+        pro = ( res / cant)
+        print ('El promedio de la lista es', pro)
+    else:
+        print('La lista se encuentra vacia')
+    return
 
 def lista_aleatorios(n,m):
-        lista = [0]  * 5
-        for i in range(5):
-          lista[i] = random.randint(1,9)
-        return lista
-    lista_al = lista_aleatorios(1,9)
-    print('La lista es:', lista_al)
+    import random
+    lista = [0]  * 5
+    for i in range(5):
+        lista[i] = random.randint(1,6)
+    return lista   
+         
+
 
 def contar (n):
     def lista_aleatorios(n,m):
@@ -78,4 +79,3 @@ def contar (n):
 def orden(lista):
     numeros.sort()
     return numeros 
-print(numeros)

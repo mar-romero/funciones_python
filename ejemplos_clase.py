@@ -61,8 +61,7 @@ def modulo():
     it.print_palabras_ordenadas(palabras)
 
     palabra = palabras.pop()    # Extrae la última palabra
-    print('{}: Cantidad letras {}'.format(palabra,
-                                          cantidad_letras(palabra)))
+    print('{}: Cantidad letras {}'.format(palabra, cantidad_letras(palabra)))
 
     inovetools.print_palabras_ordenadas(palabras)
     palabra = palabras.pop(0)   # Extra la primera palabra, índice = 0
@@ -125,7 +124,7 @@ def max_max():
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
-    contexto()
+    #contexto()
     modulo()
-    recursivo()
-    max_max()
+    #recursivo()
+    #max_max()

@@ -15,7 +15,9 @@ __author__ = "Inove Coding School"
 __email__ = "alumnos@inove.com.ar"
 __version__ = "1.1"
 
-
+import Marcelo as am
+import Marcelo
+from Marcelo import lista_aleatorios
 def ej1():
     print('Comencemos a crear lo nuestro!')
 
@@ -61,7 +63,15 @@ def ej2():
     de números.
     Imprima en pantalla dicha lista de 3 valores.
     '''
-
+    import random 
+    lis_al = lista_aleatorios(1,6)
+    print ('Los tiros de los dados dieron:', lis_al)
+    lis_al.sort()
+    print('Los numeros ordenados son:', lis_al)
+    random.shuffle(lis_al)
+    print('Se volvieron a mezclar los numedos dados:', lis_al)
+    
+    print('Valores al azar:',random.sample(lis_al, 3 ))
 
 def ej3():
     print("Dominando la recursividad")
@@ -193,8 +203,8 @@ def ej5():
 
 if __name__ == '__main__':
     print("Ejercicios de práctica")
-    ej1()
-    #ej2()
+    #ej1()
+    ej2()
     #ej3()
     #ej4()
     #ej5()
