@@ -94,6 +94,8 @@ def ej2():
     lista_aleatoria (inicio1, fin1, 2)
     #NOSE CUAL DE LOS 2 ESTA BIEN ESTE DE ABAJO LO USE PARA EL EJ 4
     
+    # Inove: Esta opcion es correcta, solo falta agregar el parametro
+    # cantidad para definir el tamaño de la lista
     def lista_aleatorios(n,m):
         lista = [0] * 2
         for i in range(2):
@@ -102,6 +104,14 @@ def ej2():
     lista_al = lista_aleatorios(inicio, fin)
     print('La lista es:', lista_al)
     
+    # Inove: Con la modificacion propuesta tendriamos
+    def inove_lista_aleatoria(n,m,cantidad):
+        lista = [0] * cantidad
+        for i in range(cantidad):
+          lista[i] = random.randrange(n, m+1)
+        return lista
+    lista_al = lista_aleatorios(inicio, fin)
+    print('La lista es:', lista_al)
 
     
     # numeros = lista_aleatoria (inicio, fin, cantidad)
@@ -179,11 +189,15 @@ def ej4():
     # lista_numeros = lista_aleatoria(...,...,cantidad_numeros)
     # Luego quiero averiguar cuantas veces se repite el numero 3
     # cantidad_tres = contar(lista_numeros, 3)
+    
+    # Inove: La funcion es correcta, pero cuidado con randrange
+    # Para que el 9 sea incluido debemos colocar 9+1, o en este caso m+1
     def lista_aleatorios(n,m):
         lista = [0]  * 5
         for i in range(5):
-          lista[i] = random.randrange(1,9)
+          lista[i] = random.randrange(n,m)  
         return lista
+    
     lista_al = lista_aleatorios(1,9)
     print('La lista es:', lista_al)
     if lista_al.count(1) > 0:
@@ -214,7 +228,31 @@ def ej4():
         veces_9 = lista_al.count(9)
         print("El numero 9 se repite:", veces_9)
     # Hay otra forma de hacerlo, sin hacer numero por numero? con bucle?
-
+    
+    # Inove: Si señor! vamos de a poco, lo importante de la funcion "contar"
+    # solicita es solo buscar y contar "1 solo" elemento deseado:
+    # "cuenta la cantidad de veces que un elemento pasado
+    #   por parámetro se repite en la lista."
+    # Esto quiere decir que nuestra funcion contar solo deberá preocuparse
+    # por contar un elemento
+    # Si por ejemplo tengo mi lista:
+    #  --> lista_al, supongamos que la lista se genero con los siguientes valores
+    # (5 numeros aleatorios del 1 al 9):
+    # [1,3,2,1,8]
+    # Y supongamos que queremos saber cuantas veces se rapite el numero "1" la funcion
+    # contar es tan simple como:
+    
+    def contar(lista, elemento):
+        cantidad_repeticiones = lista.count(elemento)
+        return cantidad_repeticiones
+    
+    lista_al = [1,3,2,1,8]  # Estoy generando a mano la lista para realizar pruebas controladas
+    numero_a_contar = 1
+    repeticiones = contar(lista_al, numero_a_contar)
+    print('El numero', numero_a_contar, 'se repite', repeticiones)
+    
+    # Como podrás apreciar en este caso no es neceserario un bucle
+    # ya que no es necesario buscar más de un elemento distinto en la lista
 
 
     
@@ -300,6 +338,34 @@ def ej5():
     # Quiero que diga se encuentra en la posicion 1, 2 y 3
     # Pero no se como hacerlo y no dejarlo en blanco su no esta en la lista
     
+    # Inove: La forma de resolverlo está perfecta, se te complicó
+    # porque en realidad no hay que buscar la posición de todos lus números
+    # posibles del 1 al 9, sino que hay que buscar los índices donde aparece el
+    # elemento deseado a buscar.
+    # Mismo ejemplo que en el anterior ejercicio, supongamos que tengo mi 
+    # lista aleatorio de 5 elementos con números del 1 al 9:
+    # --> lista_al, supongamos que la lista se genero con los siguientes valores
+    # [1,3,2,1,8]
+    # Mi funcion "buscar" debe revisar en que indices se encuentra el elemento deseado
+    # a buscar. Esta tarea la puedo realizar con un bucle, recorriendo toda la lista
+    # y almacenando los indices en donde encontre el elemento objeto
+    def buscar(lista, elemento):
+        lista_indices = []
+        for i in range(len(lista)):
+            if(lista[i] == elemento):
+                # El elemento se encuentra en este indice
+                lista_indices.append(i)  # Almaceno el indice
+        # Terminado el bucle retorno la lista de indices
+        return lista_indices
+    
+    lista_al = [1,3,2,1,8]  # Estoy generando a mano la lista para realizar pruebas controladas
+    numero_a_buscar = 1
+    indices = buscar(lista_al, numero_a_buscar)
+    print('El numero', numero_a_buscar, 'se encuentra en', indices)
+    
+    # Este ejercicio tambíen puede resolverse usando solo el método
+    # index, pero es bastante problematico cuando se desea buscar
+    # todas las posiciones en donde se encuntra el numero
 
 
 
